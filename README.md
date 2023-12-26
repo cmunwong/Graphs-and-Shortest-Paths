@@ -1,18 +1,18 @@
 # CSE 373: Graphs and Shortest Paths
 ### Background
-For this assignment, you will develop a graph representation and use it to implement Dijk- stra’s algorithm for finding shortest paths. Unlike previous assignments, you will use some classes in the Java standard libraries, gaining valuable experience reading documentation and understanding APIs.
+For this assignment, you will develop a graph representation and use it to implement Dijkstra’s algorithm for finding shortest paths. Unlike previous assignments, you will use some classes in the Java standard libraries, gaining valuable experience reading documentation and understanding APIs.
 
 You may use anything in the Java standard collections (or anything else in the standard library) for any part of this assignment. Take a look at the Java API as you are thinking about your solutions. At the very least, look at the Collection and List inter- faces to see what operations are allowable on them and what classes implement those interfaces.
 
 ### Given Material
 Six java files and two text files are provided for this assignment.
-- Vertex.java: Vertex class. You may add methods and/or variables if you wish. Do not modify existing methods.
-- Edge.java: Edge class. You may add methods and/or variables if you wish. Do not modify existing methods.
-- Path.java: Class with two fields for returning the result of a shortest-path computa- tion. Do not modify.
-- Graph.java: Graph interface. Do not modify.
-- MyGraph.java: Implementation of the Graph interface: you will need to fill in code here.
-- FindPaths.java: A client of the graph interface: Needs small additions.
-- vertex.txt and edge.txt: An example graph in the correct input format.
+- [Vertex.java](https://github.com/cmunwong/Graphs-and-Shortest-Paths/blob/main/Vertex.java): Vertex class. You may add methods and/or variables if you wish. Do not modify existing methods.
+- [Edge.java](https://github.com/cmunwong/Graphs-and-Shortest-Paths/blob/main/Edge.java): Edge class. You may add methods and/or variables if you wish. Do not modify existing methods.
+- [Path.java](https://github.com/cmunwong/Graphs-and-Shortest-Paths/blob/main/Path.java): Class with two fields for returning the result of a shortest-path computa- tion. Do not modify.
+- [Graph.java](https://github.com/cmunwong/Graphs-and-Shortest-Paths/blob/main/Graph.java): Graph interface. Do not modify.
+- [MyGraph.java](https://github.com/cmunwong/Graphs-and-Shortest-Paths/blob/main/MyGraph.java): Implementation of the Graph interface: you will need to fill in code here.
+- [FindPaths.java](https://github.com/cmunwong/Graphs-and-Shortest-Paths/blob/main/FindPaths.java): A client of the graph interface: Needs small additions.
+- [vertex.txt](https://github.com/cmunwong/Graphs-and-Shortest-Paths/blob/main/vertex.txt) and [edge.txt](https://github.com/cmunwong/Graphs-and-Shortest-Paths/blob/main/edge.txt): An example graph in the correct input format.
 
 ### Part 1: Graph Implementation
 In this part of the assignment, you will implement a graph representation that you will use in Part 2. The structures covered in the lectures (adjacency list and matrix) work efficiently when you can access a vertex in constant time. Note that vertices have string labels and it is not trivial to put them in an array and access them in constant-time. In order to utilize constant-time access (like an array or matrix), consider using hash tables (check out the classes in the Map interface in Java) instead of arrays in your implementation of the graph. Everything you would do with an array, you can do with a hash table.
