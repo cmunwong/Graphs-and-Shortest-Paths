@@ -1,10 +1,3 @@
-/*
- * Name: Sze Mun Wong
- * Student ID: 146845
- * Class: CSE 373
- * Homework: 5
- */
- 
 import java.util.*;
 import java.io.*;
  
@@ -42,13 +35,13 @@ public class FindPaths {
                 System.exit(1);
             }
  
-            //TODO YOUR CODE HERE: call shortestPath and print out the result
+            // Call shortestPath and print out the result
  
-            // print "Shortest path from (start vertex) to (end vertex):" in the first line
-            // Case 1: if there's no path from start to end vertex, print "does not exist" in the second line
-            // Case 2: if path exists from start to end vertex,
-            //           print the shortest path with vertices separated by spaces in the second line and
-            //           print the cost of the shortest path in the third line
+            // Prints "Shortest path from (start vertex) to (end vertex):" in the first line
+            // CASE 1: if there's no path from start to end vertex, print "does not exist" in the second line
+            // CASE 2: if path exists from start to end vertex,
+            //         print the shortest path with vertices separated by spaces in the second line and
+            //         print the cost of the shortest path in the third line
  
             System.out.println("Shortest path from " + a +" to "+ b +":");
  
