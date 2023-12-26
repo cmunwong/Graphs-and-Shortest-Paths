@@ -6,8 +6,8 @@ import java.util.*;
  */
 public class MyGraph implements Graph {
 
-    private List<Vertex> vertexList;    // collection of vertices
-    private List<Edge> edgeList;        // collection of edges
+    private List<Vertex> vertexList;    // Collection of vertices
+    private List<Edge> edgeList;        // Collection of edges
  
     /**
      * Creates a MyGraph object with the given collection of vertices
