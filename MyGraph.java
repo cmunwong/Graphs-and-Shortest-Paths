@@ -18,8 +18,10 @@ public class MyGraph implements Graph {
  
     // Initializes the collection of vertices and edges with the given collections 
     public MyGraph(Collection<Vertex> v, Collection<Edge> e) {
+        
         // Initializes vertexList with the given collection of vertices
         vertexList = new ArrayList<Vertex>();
+     
         for(Vertex vertex:v){
             // Ignores repeated vertices
             if (!vertexList.contains(vertex)){
@@ -29,11 +31,14 @@ public class MyGraph implements Graph {
  
         // Initializes edgeList with the given collection of edges
         edgeList = new ArrayList<Edge>();
+     
         for(Edge edge:e){
+            
             // Throws IllegalArgumentException if edge weight is negative
             if(edge.getWeight() < 0){
                 throw new IllegalArgumentException("weight is negative:" + edge.toString());
             }
+            
             // Throws IllegalArgumentException if edge involves vertex with label that is not vertex of the graph
             if(!vertexList.contains(edge.getSource())){
                 throw new IllegalArgumentException("from does not exist" + edge.getSource().toString());
@@ -41,6 +46,7 @@ public class MyGraph implements Graph {
             if (!vertexList.contains(edge.getDestination())){
                 throw new IllegalArgumentException("to does not exist" + edge.getDestination().toString());
             }
+            
             // Ignores repeated edges
             if (!edgeList.contains(edge)){
                 edgeList.add(edge);
@@ -73,17 +79,21 @@ public class MyGraph implements Graph {
      * @throws IllegalArgumentException if v does not exist.
      */
     public Collection<Vertex> adjacentVertices(Vertex v) {
+        
         // Throws IllegalArgumentException if v does not exist
         if(!vertexList.contains(v)){
             throw new IllegalArgumentException("v does not exist");
         }
+        
         // Initializes the collection of vertices adjacent to v
         List<Vertex> adjList = new ArrayList<Vertex>();
+     
         for (Edge e:edgeList){
             if(e.getSource().equals(v)){
                 adjList.add(e.getDestination());
             }
         }
+        
         // Returns the collection of vertices adjacent to v
         return adjList;
     }
@@ -145,7 +155,7 @@ public class MyGraph implements Graph {
             HashSet<Vertex> unknown = new HashSet<Vertex>();                   // Set of unknown vertices
             Stack<Vertex> reversePath = new Stack<Vertex>();                   // Helper to get the list of path in order
  
-            // Dijkstra's algorithm
+            // Dijkstra’s Shortest Path Algorithm
             for (Vertex v:vertexList){
                 cost.put(v, Integer.MAX_VALUE);    // Initializes cost with all values equal to infinity
                 prev.put(v, null);                 // Initializes prev with all values equal to null
