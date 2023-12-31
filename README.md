@@ -16,7 +16,7 @@ Two text files: an example graph in the correct input format
 - [edge.txt](https://github.com/cmunwong/Graphs-and-Shortest-Paths/blob/main/edge.txt): The second argument to the program
 
 ### Part 1: Graph Implementation
-[MyGraph](https://github.com/cmunwong/Graphs-and-Shortest-Paths/blob/main/MyGraph.java) class: 
+[MyGraph class](https://github.com/cmunwong/Graphs-and-Shortest-Paths/blob/main/MyGraph.java): 
 Implement a graph representation for computing shortest paths in Part 2 that protects its abstraction from bad clients.
 - Ignores repeated vertices in the collection. 
 - Ignores if an edge appears redundantly with the same weight.
@@ -25,7 +25,7 @@ Implement a graph representation for computing shortest paths in Part 2 that pro
 - Clients of a graph cannot break the abstraction by adding edges, making illegal weights, etc.
 
 ### Part 2: Dijkstra’s Shortest Path Algorithm
-[MyGraph](https://github.com/cmunwong/Graphs-and-Shortest-Paths/blob/main/MyGraph.java) class: 
+[MyGraph class](https://github.com/cmunwong/Graphs-and-Shortest-Paths/blob/main/MyGraph.java): 
 Implement the shortestPath method to return the lowest-cost path from its first argument to its second argument.
 - CASE 1: If the start and end vertex are equal, return a path containing one vertex and a cost of 0.
 - CASE 2: If there is no path, return null.
