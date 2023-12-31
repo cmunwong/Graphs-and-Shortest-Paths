@@ -12,9 +12,12 @@ Six java files:
 - [FindPaths.java](https://github.com/cmunwong/Graphs-and-Shortest-Paths/blob/main/FindPaths.java): A client of the Graph interface.
 
 Two text files: 
-An example data set where the vertices are 3-letter airport codes. 
-- [vertex.txt](https://github.com/cmunwong/Graphs-and-Shortest-Paths/blob/main/vertex.txt): The first argument to the program. 
-- [edge.txt](https://github.com/cmunwong/Graphs-and-Shortest-Paths/blob/main/edge.txt): The second argument to the program.
+<br>An example data set where the vertices are 3-letter airport codes. 
+- [vertex.txt](https://github.com/cmunwong/Graphs-and-Shortest-Paths/blob/main/vertex.txt)(the first argument to the program): Has one line per vertex and each line contains a string with the name of a vertex.
+- [edge.txt](https://github.com/cmunwong/Graphs-and-Shortest-Paths/blob/main/edge.txt)(the second argument to the program): Has three lines per directed edge (so lines 1-3 describe the first edge, lines 4-6 describe the second edge, etc.):
+  1. The first line gives the source vertex.
+  2. The second line gives the destination vertex.
+  3. The third line is a string of digits that give the weight of the edge (this line should be converted to a number to be stored in the graph).
 
 ### Part 1: Graph Implementation
 MyGraph class: Implement a graph representation for computing shortest paths in Part 2 that protects its abstraction from bad clients.
