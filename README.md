@@ -44,11 +44,11 @@ Implement the part to take the vertex names, call shortestPath, and print out th
 - Loops the graph repeatedly and allows the user to ask shortest-path questions by entering two vertex names.
 - Expects two input files (vertex.txt and edge.txt) in a particular format.
 
-#### The file of vertices: [vertex.txt](https://github.com/cmunwong/Graphs-and-Shortest-Paths/blob/main/vertex.txt)
+#### [vertex.txt](https://github.com/cmunwong/Graphs-and-Shortest-Paths/blob/main/vertex.txt):
 - The first argument to the program.
 - Has one line per vertex and each line contains a string with the name of a vertex.
 
-#### The file of edges: [edge.txt](https://github.com/cmunwong/Graphs-and-Shortest-Paths/blob/main/edge.txt)
+#### [edge.txt](https://github.com/cmunwong/Graphs-and-Shortest-Paths/blob/main/edge.txt):
 - The second argument to the program.
 - Has three lines per directed edge (so lines 1-3 describe the first edge, lines 4-6 describe the second edge, etc.):
   1. The first line gives the source vertex.
