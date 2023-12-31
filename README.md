@@ -11,7 +11,7 @@ Six java files:
 - [MyGraph.java](https://github.com/cmunwong/Graphs-and-Shortest-Paths/blob/main/MyGraph.java): Implementation of the Graph interface.
 - [FindPaths.java](https://github.com/cmunwong/Graphs-and-Shortest-Paths/blob/main/FindPaths.java): A client of the Graph interface.
 
-Two text files: an example graph in the correct input format
+Two text files: An example graph in the correct input format.
 - [vertex.txt](https://github.com/cmunwong/Graphs-and-Shortest-Paths/blob/main/vertex.txt): The first argument to the program.
 - [edge.txt](https://github.com/cmunwong/Graphs-and-Shortest-Paths/blob/main/edge.txt): The second argument to the program
 
@@ -44,9 +44,10 @@ Implement the part to take the vertex names, call shortestPath, and print out th
 - Expects two input files (vertex.txt and edge.txt) in a particular format. 
 
 ### An example data set where the vertices are 3-letter airport codes:
-The first argument to the program: vertex.txt has one line per vertex and each line contains a string with the name of a vertex.
+The first argument to the program: [vertex.txt](https://github.com/cmunwong/Graphs-and-Shortest-Paths/blob/main/vertex.txt):
+- Has one line per vertex and each line contains a string with the name of a vertex.
 
-edge.txt: 
+[edge.txt](https://github.com/cmunwong/Graphs-and-Shortest-Paths/blob/main/edge.txt): 
 - The second argument to the program
 - Has three lines per directed edge (so lines 1-3 describe the first edge, lines 4-6 describe the second edge, etc.):
   1. The first line gives the source vertex.
