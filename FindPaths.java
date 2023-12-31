@@ -16,13 +16,17 @@ public class FindPaths {
         MyGraph g = readGraph(args[0],args[1]);
  
         Scanner console = new Scanner(System.in);
+     
         Collection<Vertex> v = g.vertices();
         Collection<Edge> e = g.edges();
+     
         System.out.println("Vertices are "+v);
         System.out.println("Edges are "+e);
+     
         while(true) {
             System.out.print("Start vertex? ");
             Vertex a = new Vertex(console.nextLine());
+         
             if(!v.contains(a)) {
                 System.out.println("no such vertex");
                 System.exit(0);
@@ -30,29 +34,30 @@ public class FindPaths {
  
             System.out.print("Destination vertex? ");
             Vertex b = new Vertex(console.nextLine());
+            
             if(!v.contains(b)) {
                 System.out.println("no such vertex");
                 System.exit(1);
             }
  
-            // Call shortestPath and print out the result
- 
+            // Calls shortestPath and print out the result
             // Prints "Shortest path from (start vertex) to (end vertex):" in the first line
-            // CASE 1: if there's no path from start to end vertex, print "does not exist" in the second line
-            // CASE 2: if path exists from start to end vertex,
-            //         print the shortest path with vertices separated by spaces in the second line and
-            //         print the cost of the shortest path in the third line
- 
             System.out.println("Shortest path from " + a +" to "+ b +":");
- 
+
+            // CASE 1: if there's no path from start to end vertex, print "does not exist" in the second line
             if(g.shortestPath(a, b) == null){
                 System.out.println("does not exist");
             }
             else{
+                // CASE 2: if path exists from start to end vertex
                 for (Vertex vertex:g.shortestPath(a, b).vertices){
+                    
+                    // Print the shortest path with vertices separated by spaces in the second line and
                     System.out.print(vertex.toString() + " ");
                 }
                 System.out.println();
+             
+                // Print the cost of the shortest path in the third line
                 System.out.println(g.shortestPath(a, b).cost);
             }
         }
