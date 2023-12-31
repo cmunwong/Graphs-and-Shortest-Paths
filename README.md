@@ -1,4 +1,4 @@
-# CSE 373: Graphs and Shortest Paths
+# Graphs and Shortest Paths
 ### Objective
 Develop a graph representation and use it to implement Dijkstra’s algorithm for finding shortest paths. 
 
@@ -11,7 +11,7 @@ Six java files:
 - [MyGraph.java](https://github.com/cmunwong/Graphs-and-Shortest-Paths/blob/main/MyGraph.java): Implementation of the Graph interface.
 - [FindPaths.java](https://github.com/cmunwong/Graphs-and-Shortest-Paths/blob/main/FindPaths.java): A client of the Graph interface.
 
-Two text files: An example graph in the correct input format.
+Two text files: *An example graph in the correct input format.*
 - [vertex.txt](https://github.com/cmunwong/Graphs-and-Shortest-Paths/blob/main/vertex.txt): The first argument to the program.
 - [edge.txt](https://github.com/cmunwong/Graphs-and-Shortest-Paths/blob/main/edge.txt): The second argument to the program
 
