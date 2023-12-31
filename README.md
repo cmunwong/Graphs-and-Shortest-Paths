@@ -37,13 +37,13 @@ Implement the part to take the vertex names, call shortestPath, and print out th
 - CASE 1: If there is no path from the start to end vertex, print exactly one more line does not exist
 - CASE 2: If path exists from start to end vertex, print the path with vertices separated by spaces on the second line and the cost of the path on the third line.
 
+#### An example data set where the vertices are 3-letter airport codes:
 #### [FindPaths.java](https://github.com/cmunwong/Graphs-and-Shortest-Paths/blob/main/FindPaths.java):
 - Reads two data files and creates a representation of the graph.
 - Prints out the graph’s vertices and edges.
 - Loops the graph repeatedly and allows the user to ask shortest-path questions by entering two vertex names.
-- Expects two input files (vertex.txt and edge.txt) in a particular format. 
+- Expects two input files (vertex.txt and edge.txt) in a particular format.
 
-#### An example data set where the vertices are 3-letter airport codes:
 #### The file of vertices: [vertex.txt](https://github.com/cmunwong/Graphs-and-Shortest-Paths/blob/main/vertex.txt)
 - The first argument to the program.
 - Has one line per vertex and each line contains a string with the name of a vertex.
@@ -55,6 +55,6 @@ Implement the part to take the vertex names, call shortestPath, and print out th
   2. The second line gives the destination vertex.
   3. The third line is a string of digits that give the weight of the edge (this line should be converted to a number to be stored in the graph).
 
-### Note: data files represent directed graphs
+#### Note: data files represent directed graphs
 - If there is an edge from A to B there may or may not be an edge from B to A.
 - If there is an edge from A to B and an edge from B to A, the edges may or may not have the same weight.
