@@ -17,40 +17,31 @@ public class MyGraph implements Graph {
      */
  
     // Initializes the collection of vertices and edges with the given collections 
-    // Ignores the redundant information
-    // Throws IllegalArgumentException if edge weight is negative
-    // Throws IllegalArgumentException if edge involves vertex with label that is not vertex of the graph
- 
     public MyGraph(Collection<Vertex> v, Collection<Edge> e) {
-     
         // Initializes vertexList with the given collection of vertices
-        // Ignores repeated vertices
         vertexList = new ArrayList<Vertex>();
         for(Vertex vertex:v){
+            // Ignores repeated vertices
             if (!vertexList.contains(vertex)){
                 vertexList.add(vertex);
             }
         }
  
         // Initializes edgeList with the given collection of edges
-        // Ignores repeated edges
-        // Throws IllegalArgumentException if edge weight is negative
-        // Throws IllegalArgumentException if edge involves vertex with label that is not vertex of the graph
-        
         edgeList = new ArrayList<Edge>();
         for(Edge edge:e){
+            // Throws IllegalArgumentException if edge weight is negative
             if(edge.getWeight() < 0){
                 throw new IllegalArgumentException("weight is negative:" + edge.toString());
             }
- 
+            // Throws IllegalArgumentException if edge involves vertex with label that is not vertex of the graph
             if(!vertexList.contains(edge.getSource())){
                 throw new IllegalArgumentException("from does not exist" + edge.getSource().toString());
             }
- 
             if (!vertexList.contains(edge.getDestination())){
                 throw new IllegalArgumentException("to does not exist" + edge.getDestination().toString());
             }
- 
+            // Ignores repeated edges
             if (!edgeList.contains(edge)){
                 edgeList.add(edge);
             }
@@ -82,12 +73,10 @@ public class MyGraph implements Graph {
      * @throws IllegalArgumentException if v does not exist.
      */
     public Collection<Vertex> adjacentVertices(Vertex v) {
-
         // Throws IllegalArgumentException if v does not exist
         if(!vertexList.contains(v)){
             throw new IllegalArgumentException("v does not exist");
         }
- 
         // Initializes the collection of vertices adjacent to v
         List<Vertex> adjList = new ArrayList<Vertex>();
         for (Edge e:edgeList){
@@ -95,7 +84,6 @@ public class MyGraph implements Graph {
                 adjList.add(e.getDestination());
             }
         }
- 
         // Returns the collection of vertices adjacent to v
         return adjList;
     }
@@ -110,19 +98,16 @@ public class MyGraph implements Graph {
      * @throws IllegalArgumentException if a or b do not exist.
      */
     public int edgeCost(Vertex a, Vertex b) {
-
         // Throws IllegalArgumentException if a or b does not exist
         if(!vertexList.contains(a)||!vertexList.contains(b)){
             throw new IllegalArgumentException("a or b do not exist");
         }
- 
         // Returns cost of edge if there is a directed edge from a to b in the graph
         for (Edge e:edgeList){
             if(e.getSource().equals(a) && e.getDestination().equals(b)){
                 return e.getWeight();
             }
         }
- 
         // return -1 otherwise
         return -1;
     }
@@ -139,8 +124,8 @@ public class MyGraph implements Graph {
      * @throws IllegalArgumentException if a or b does not exist.
      */
     public Path shortestPath(Vertex a, Vertex b) {
-        
-        List<Vertex> pathList = new ArrayList<Vertex>();    // list of path
+     
+        List<Vertex> pathList = new ArrayList<Vertex>();    // List of path
  
         // Throws IllegalArgumentException if a or b does not exist
         if(!vertexList.contains(a)||!vertexList.contains(b)){
@@ -155,21 +140,16 @@ public class MyGraph implements Graph {
         }
  
         else{
-            HashMap<Vertex, Integer> cost = new HashMap<Vertex, Integer>();      // Value is the shortest distance from a to the corresponding key
-            HashMap<Vertex, Vertex> prev = new HashMap<Vertex, Vertex>();        // Value is the previous vertex of the corresponding key according to the shortest path
-            HashSet<Vertex> unknown = new HashSet<Vertex>();                     // Set of unknown vertices
-            Stack<Vertex> reversePath = new Stack<Vertex>();                     // Helper to get the list of path in order
+            HashMap<Vertex, Integer> cost = new HashMap<Vertex, Integer>();    // Value is the shortest distance from a to the corresponding key
+            HashMap<Vertex, Vertex> prev = new HashMap<Vertex, Vertex>();      // Value is the previous vertex of the corresponding key according to the shortest path
+            HashSet<Vertex> unknown = new HashSet<Vertex>();                   // Set of unknown vertices
+            Stack<Vertex> reversePath = new Stack<Vertex>();                   // Helper to get the list of path in order
  
             // Dijkstra's algorithm
- 
-            // Initializes cost with all values equal to infinity
-            // Initializes prev with all values equal to null
-            // Puts all vertices to the unknown set
-         
             for (Vertex v:vertexList){
-                cost.put(v, Integer.MAX_VALUE);
-                prev.put(v, null);
-                unknown.add(v);
+                cost.put(v, Integer.MAX_VALUE);    // Initializes cost with all values equal to infinity
+                prev.put(v, null);                 // Initializes prev with all values equal to null
+                unknown.add(v);                    // Puts all vertices to the unknown set
             }
             cost.put(a, 0);
  
@@ -186,9 +166,9 @@ public class MyGraph implements Graph {
  
                 for (Edge e:edgeList){
                     if(e.getSource().equals(temp) && unknown.contains(e.getDestination())){
-                        if (cost.get(temp) + e.getWeight() < cost.get(e.getDestination())){        // <=
-                            cost.put(e.getDestination(), cost.get(temp) + e.getWeight());          // Updates cost with shortest distance found
-                            prev.put(e.getDestination(), temp);                                    // Updates prev
+                        if (cost.get(temp) + e.getWeight() < cost.get(e.getDestination())){    // <=
+                            cost.put(e.getDestination(), cost.get(temp) + e.getWeight());      // Updates cost with shortest distance found
+                            prev.put(e.getDestination(), temp);                                // Updates prev
                         }
                     }
                 }
